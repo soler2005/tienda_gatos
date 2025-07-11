@@ -1,0 +1,195 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex; /* Use flexbox for body to stack header, nav, sections */
+    flex-direction: column;
+    min-height: 100vh; /* Make sure body takes at least full viewport height */
+}
+
+/* Main Navigation Menu (adapt from your 'menu.css' or paste here if preferred) */
+/* Assuming 'menu.css' is linked and handles this, but including for completeness */
+.main-menu {
+    background-color: #333;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* No margin-bottom here, let hero-section handle spacing */
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-menu li {
+    margin: 0 1px;
+}
+
+.main-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.main-menu li a:hover {
+    background-color: #555;
+    color: #f9f9f9;
+}
+
+.main-menu li a.active {
+    background-color: #e44d26; /* Highlight for the active page */
+    color: white;
+}
+
+/* Hero Section (Header) Styling */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('gato_portada.jpg') no-repeat center center/cover; /* Replace 'gato_portada.jpg' with your image */
+    color: white;
+    text-align: center;
+    padding: 80px 20px; /* Vertical padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; /* Minimum height for the hero section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px; /* Space below the header */
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-section h1 {
+    font-size: 4.5em; /* Larger, more impactful title */
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Stronger text shadow */
+    letter-spacing: 2px; /* Slightly more spaced letters */
+}
+
+.hero-section .slogan {
+    font-size: 1.8em; /* Slogan text size */
+    margin-bottom: 30px;
+    font-style: italic;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    display: inline-block; /* Allows padding and margin */
+    background-color: #e44d26; /* Your accent color */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:hover {
+    background-color: #ff6f42; /* Lighter shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Introduction Section Styling */
+.intro-section {
+    padding: 30px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 0px auto 40px auto; /* Centered, with space below */
+    text-align: center;
+}
+
+.intro-section h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e44d26;
+    padding-bottom: 10px;
+    display: inline-block; /* Makes border-bottom only as wide as text */
+}
+
+.intro-section p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: justify; /* Justify text for a clean look */
+    color: #555;
+}
+
+/* Footer (Optional) */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+    background-color: #333;
+    color: white;
+    font-size: 0.9em;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 60px 15px;
+        min-height: 300px;
+    }
+
+    .hero-section h1 {
+        font-size: 3em;
+    }
+
+    .hero-section .slogan {
+        font-size: 1.3em;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    .intro-section {
+        padding: 20px 15px;
+        margin: 0px auto 30px auto;
+    }
+
+    .intro-section h2 {
+        font-size: 1.8em;
+    }
+
+    .intro-section p {
+        font-size: 1em;
+        text-align: left; /* Maybe left align on mobile for better readability */
+    }
+
+    .main-menu ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main-menu li {
+        border-bottom: 1px solid #444;
+    }
+    .main-menu li:last-child {
+        border-bottom: none;
+    }
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nosotros - Michichon S.A.S</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0; /* Elimina el margen predeterminado del body */
+            padding: 20px; /* Añade un padding general al contenido */
+            background-color: #f4f4f4; /* Fondo suave para la página */
+            color: #333;
+        }
+
+        /* Estilos del Menú de Navegación */
+        nav.menu {
+            background-color: #333;
+            padding: 0;
+            margin-bottom: 30px; /* Espacio debajo del menú */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px; /* Bordes redondeados para el menú */
+            overflow: hidden; /* Asegura que el contenido respete los bordes redondeados */
+        }
+
+        nav.menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centra los ítems del menú */
+            flex-wrap: wrap; /* Permite que los ítems se envuelvan en pantallas pequeñas */
+        }
+
+        nav.menu li {
+            margin: 0 1px; /* Espacio sutil entre los ítems del menú */
+        }
+
+        nav.menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 18px; /* Padding para los enlaces */
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para hover */
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        nav.menu li a:hover {
+            background-color: #555;
+            color: #f9f9f9;
+        }
+
+        nav.menu li a.active { /* Clase para resaltar la página actual */
+            background-color: #e44d26; /* Color de acento para la página activa */
+            color: white;
+        }
+
+        /* Estilos Específicos de la Página */
+        h1 {
+            color: #e44d26; /* Un naranja llamativo */
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.8em; /* Tamaño de fuente más grande para el título principal */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sombra sutil en el texto */
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            text-align: justify;
+            color: #555; /* Un color de texto un poco más suave */
+        }
+
+        .company-info {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px; /* Bordes más redondeados */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada para un efecto flotante */
+            margin-bottom: 30px;
+            max-width: 900px; /* Ancho máximo para el contenido principal */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mission-vision {
+            display: flex;
+            flex-wrap: wrap; /* Permite que las columnas se envuelvan */
+            gap: 25px; /* Espacio entre las cajas de misión y visión */
+            margin-bottom: 30px;
+            max-width: 900px; /* Ancho máximo */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mission, .vision {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+            flex: 1; /* Ocupa el espacio disponible */
+            min-width: 300px; /* Ancho mínimo para que no se compriman demasiado */
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e44d26; /* Línea debajo de los subtítulos */
+            padding-bottom: 5px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .image-container img {
+            max-width: 100%; /* Asegura que la imagen sea responsiva */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: block; /* Elimina el espacio extra debajo de la imagen */
+            margin: 0 auto; /* Centra la imagen */
+        }
+
+        ul {
+            list-style: none; /* Elimina las viñetas predeterminadas */
+            padding: 0;
+        }
+
+        ul li {
+            background: url('paw-print.png') no-repeat left center; /* Opcional: icono de patita */
+            background-size: 20px;
+            padding-left: 30px; /* Espacio para el icono */
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .mission-vision {
+                flex-direction: column; /* Apila misión y visión en pantallas pequeñas */
+            }
+            nav.menu ul {
+                flex-direction: column; /* Apila el menú en pantallas pequeñas */
+                align-items: stretch; /* Estira los ítems del menú */
+            }
+            nav.menu li {
+                margin: 0;
+                border-bottom: 1px solid #444; /* Separador en el menú apilado */
+            }
+            nav.menu li:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Sobre nosotros.html" class="active">Sobre nosotros</a></li>
+            <li><a href="servicios y productos.html">Servicios y productos</a></li>
+            <li><a href="contacto1.html">Contacto</a></li>
+            <li><a href="registro.html">Registro</a></li>
+        </ul>
+    </nav>
+
+    <div class="image-container">
+        <img src="/imagenes/feliz.jpeg" alt="Un gato feliz jugando con sus juguetes, representando la misión de Michichon S.A.S">
+    </div>
+
+    <div class="company-info">
+        <h1>Michichon S.A.S</h1>
+        <p>¡Bienvenidos a **Michichon S.A.S**, tu destino ideal para todo lo que tu felino amigo necesita! Somos una empresa apasionada por los gatos, dedicada a ofrecer una amplia gama de productos de alta calidad para asegurar su bienestar, salud y felicidad.</p>
+        <p>En Michichon S.A.S, entendemos que los gatos son más que simples mascotas; son miembros importantes de nuestras familias. Por eso, nos esforzamos por seleccionar cuidadosamente cada artículo de nuestro catálogo, desde accesorios cómodos y seguros hasta medicamentos esenciales y juguetes estimulantes. Nuestra prioridad es la satisfacción de nuestros clientes peludos y sus dueños.</p>
+    </div>
+
+    <div class="mission-vision">
+        <div class="mission">
+            <h2>Nuestra Misión</h2>
+            <p>Proveer productos y servicios de la más alta calidad para gatos, fomentando un vínculo fuerte y saludable entre las mascotas y sus dueños. Buscamos satisfacer las necesidades específicas de cada gato, contribuyendo a su bienestar general y alegría de vivir a través de una selección cuidadosamente curada de artículos.</p>
+        </div>
+        <div class="vision">
+            <h2>Nuestra Visión</h2>
+            <p>Ser la empresa líder en el mercado de productos para gatos, reconocida por nuestra **calidad**, **innovación** y **compromiso** con la comunidad felina. Aspiramos a ser el referente de confianza para los dueños de gatos, ofreciendo soluciones integrales y un servicio excepcional que supere sus expectativas.</p>
+        </div>
+    </div>
+
+    <div class="company-info">
+        <h2>¿Qué ofrecemos?</h2>
+        <p>En Michichon S.A.S, encontrarás una extensa variedad de productos pensados para cada aspecto de la vida de tu gato:</p>
+        <ul>
+            <li>**Alimentación Premium:** Piensos secos y húmedos de marcas reconocidas, opciones dietéticas especiales y deliciosas golosinas.</li>
+            <li>**Accesorios Confortables:** Camas suaves, transportines seguros para viajes, comederos interactivos y fuentes de agua.</li>
+            <li>**Salud y Bienestar:** Medicamentos básicos, suplementos vitamínicos, productos de higiene como champús y cepillos, y soluciones antiparasitarias.</li>
+            <li>**Juguetes y Entretenimiento:** Variedad de juguetes interactivos, rascadores resistentes, túneles y árboles para gatos que estimulan su mente y cuerpo.</li>
+        </ul>
+        <p>Nos comprometemos a ofrecerte productos que cumplen con los más altos estándares de calidad y seguridad, porque la salud y felicidad de tu gato son, sin duda, nuestra mayor prioridad.</p>
+    </div>
+
+</body>
+</html>

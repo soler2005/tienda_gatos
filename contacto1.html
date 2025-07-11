@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Michichon S.A.S</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="contacto.css">
+</head>
+<body>
+    <nav class="main-menu">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Sobre nosotros.html">Sobre nosotros</a></li>
+            <li><a href="servicios y productos.html">Servicios y productos</a></li>
+            <li><a href="contacto1.html" class="active">Contacto</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Contáctanos</h1>
+        <p class="intro-text">¿Tienes alguna pregunta, sugerencia o necesitas ayuda? Estamos aquí para escucharte. Puedes contactarnos a través de los siguientes medios o rellenando nuestro formulario.</p>
+
+        <div class="contact-info-section">
+            <div class="contact-card">
+                <h2>Información de Contacto</h2>
+                <p><i class="icon-phone"></i> <strong>Teléfono:</strong> <a href="tel:+573125421410">312 542 1410</a></p>
+                <p><i class="icon-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/573125421410" target="_blank">312 542 1410</a> (Haz clic para chatear)</p>
+                <p><i class="icon-email"></i> <strong>Correo Electrónico:</strong> <a href="mailto:info@michichon.com">info@michichon.com</a></p>
+                <p><i class="icon-location"></i> <strong>Dirección:</strong> Calle Ficticia 123, Bogotá, Colombia</p>
+                <p><i class="icon-clock"></i> <strong>Horario de Atención:</strong> Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+
+        <div class="contact-form-section">
+            <h2>Envíanos un Mensaje</h2>
+            <form action="#" method="POST" class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Tu Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Enviar Mensaje</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="/imagenes/bien.jpg" alt="Gato feliz" class="modal-image">
+            <p class="modal-message">¡Gracias! Tu mensaje ha sido enviado con éxito. Te responderemos a la brevedad posible.</p>
+        </div>
+    </div>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const successModal = document.getElementById('successModal');
+        const closeModalBtn = document.querySelector('.close-button');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Previene el envío real del formulario
+
+            // Mostrar la ventana modal
+            successModal.style.display = 'flex'; // Usar flex para centrar contenido
+
+            // Limpiar el formulario
+            contactForm.reset();
+
+            // Opcional: Desplazarse al inicio de la página para que la modal sea más visible
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Ocultar la modal después de unos segundos
+            setTimeout(() => {
+                successModal.style.display = 'none';
+            }, 5000); // Ocultar después de 5 segundos
+        });
+
+        // Evento para cerrar la modal haciendo clic en la 'x'
+        closeModalBtn.addEventListener('click', function() {
+            successModal.style.display = 'none';
+        });
+
+        // Evento para cerrar la modal haciendo clic fuera del contenido de la modal
+        window.addEventListener('click', function(event) {
+            if (event.target == successModal) {
+                successModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

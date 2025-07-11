@@ -1,0 +1,71 @@
+/* Estilos generales del cuerpo para una mejor visualización */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Fuente más moderna y legible */
+    background-color: #f4f4f4; /* Fondo suave para el cuerpo */
+}
+
+/* Estilos para el contenedor principal del menú de navegación */
+.menu {
+    background-color: #333; /* Fondo oscuro y elegante para el menú */
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
+}
+
+/* Estilos para la lista no ordenada dentro del menú */
+.menu ul {
+    list-style: none; /* Elimina las viñetas predeterminadas de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Usa Flexbox para alinear los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos del menú en el navegador */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea en pantallas pequeñas */
+}
+
+/* Estilos para cada elemento de la lista (cada botón del menú) */
+.menu li {
+    margin: 0 1px; /* Pequeño espacio horizontal entre los botones del menú */
+}
+
+/* Estilos para los enlaces (los textos clicables) dentro del menú */
+.menu a {
+    display: block; /* Hace que el enlace ocupe todo el espacio del 'li', haciéndolo más fácil de clicar */
+    color: #ffffff; /* Color de texto blanco para un buen contraste */
+    text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+    padding: 15px 25px; /* Espaciado interno para que los "botones" sean más grandes y cómodos */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza la transición de colores al interactuar */
+    font-weight: bold; /* Texto en negrita para mayor énfasis */
+    font-size: 16px; /* Tamaño de fuente adecuado */
+    border-radius: 5px; /* Bordes ligeramente redondeados para un aspecto moderno */
+}
+
+/* Efecto al pasar el ratón por encima de los enlaces del menú */
+.menu a:hover {
+    background-color: #575757; /* Cambia el color de fondo a un gris más claro */
+    color: #e0e0e0; /* El color del texto se vuelve un blanco más suave */
+}
+
+/* Estilo opcional para resaltar la página actual */
+/* Si quieres que la página actual se vea diferente, añade la clase 'current-page' a su 'a' en el HTML */
+.menu a.current-page {
+    background-color: #007bff; /* Un color distintivo, como un azul brillante */
+    color: #ffffff;
+}
+
+/* Media Queries para hacer el menú responsivo en pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column; /* Apila los elementos del menú verticalmente */
+        align-items: stretch; /* Estira los elementos para que ocupen todo el ancho disponible */
+    }
+
+    .menu li {
+        margin: 0; /* Elimina el margen lateral cuando los elementos están apilados */
+        border-bottom: 1px solid #444; /* Añade un separador sutil entre los elementos */
+    }
+
+    .menu li:last-child {
+        border-bottom: none; /* Elimina el borde inferior del último elemento para un mejor acabado */
+    }
+}

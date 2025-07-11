@@ -1,0 +1,238 @@
+/* Estilo General del Cuerpo y Contenedor */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px; /* Ancho máximo para el contenido */
+    margin: 20px auto; /* Centra el contenedor con margen vertical */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #e44d26; /* Tu color de acento */
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Estilo de la Categoría de Productos */
+.product-category {
+    display: flex; /* Usa flexbox para el diseño de imagen y texto */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-bottom: 50px; /* Espacio entre categorías */
+    padding: 25px;
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto suave al pasar el ratón */
+}
+
+.product-category:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-category:nth-child(even) { /* Diseño alterno para categorías pares */
+    flex-direction: row-reverse; /* Imagen a la derecha */
+}
+
+.product-category h2 {
+    color: #333;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #e44d26; /* Línea de acento debajo de los títulos */
+    padding-bottom: 8px;
+    display: inline-block; /* Para que la línea de acento solo abarque el texto */
+}
+
+.product-category img {
+    width: 250px; /* Ancho fijo para las imágenes */
+    height: 250px; /* Altura fija para hacerlas cuadradas/circulares */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    border-radius: 50%; /* Hace las imágenes circulares */
+    margin: 0 30px; /* Espacio alrededor de la imagen */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada para las imágenes */
+    flex-shrink: 0; /* Evita que la imagen se encoja si hay poco espacio */
+    /* Añadido para animación sutil al cargar */
+    animation: fadeInScale 0.8s ease-out; 
+}
+
+/* Nuevos estilos para el texto dentro de product-category */
+.product-category > div { /* Contenedor para el texto y la lista */
+    flex: 1; /* Permite que el div de texto ocupe el espacio restante */
+    min-width: 300px; /* Asegura que el texto tenga un ancho mínimo para no comprimirse */
+}
+
+.product-category p {
+    font-size: 1.05em; /* Tamaño de fuente ligeramente ajustado */
+    text-align: justify;
+    line-height: 1.7; /* Mayor espacio entre líneas */
+    color: #555;
+    margin-bottom: 15px; /* Espacio debajo del párrafo introductorio */
+}
+
+.product-category ul {
+    list-style: none; /* Quita las viñetas predeterminadas */
+    padding: 0;
+    margin: 0;
+}
+
+.product-category ul li {
+    /* Asumo que 'paw-print.png' está en la misma carpeta que este CSS o en '/imagenes/paw-print.png' */
+    background: url('./paw-print.png') no-repeat left 8px; /* Ícono de patita (ajusta la ruta si es necesario) */
+    background-size: 18px; /* Tamaño del ícono */
+    padding-left: 28px; /* Espacio para el ícono */
+    margin-bottom: 10px; /* Espacio entre cada ítem de la lista */
+    color: #555;
+    font-size: 1em;
+}
+
+/* Estilos para el texto en negrita dentro de las listas */
+.product-category ul li strong {
+    color: #333; /* Un poco más oscuro para el texto en negrita */
+}
+
+/* Main Navigation Menu (adapt from your 'menu.css' or paste here if preferred) */
+/* Asegúrate de que esta sección está en tu archivo menu.css o directamente aquí */
+.main-menu {
+    background-color: #333;
+    padding: 0;
+    margin-bottom: 30px; /* Espacio entre el menú y el contenido principal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-menu li {
+    margin: 0 1px;
+}
+
+.main-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    font-size: 1.05em;
+}
+
+.main-menu li a:hover {
+    background-color: #555;
+    color: #f9f9f9;
+}
+
+.main-menu li a.active {
+    background-color: #e44d26; /* Highlight for the active page */
+    color: white;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 900px) { /* Añadí un breakpoint intermedio para mejor ajuste */
+    .product-category {
+        flex-direction: column; /* Apila imagen y texto verticalmente */
+        text-align: center; /* Centra el texto */
+        padding: 20px;
+    }
+
+    .product-category:nth-child(even) {
+        flex-direction: column; /* Asegura el orden apilado para todos */
+    }
+
+    .product-category img {
+        width: 200px; /* Imágenes un poco más pequeñas en pantallas medianas */
+        height: 200px;
+        margin: 0 auto 20px auto; /* Centra y agrega margen inferior */
+    }
+
+    .product-category h2 {
+        font-size: 1.8em;
+        text-align: center;
+        border-bottom: 2px solid #e44d26; /* Mantiene la línea de acento, pero puedes quitarla si prefieres */
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+
+    .product-category p,
+    .product-category ul {
+        font-size: 1em;
+        text-align: left; /* Alinea párrafos y listas a la izquierda para mejor lectura */
+        padding-left: 0; /* Quita el padding si la lista tiene un icono personalizado */
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    .product-category ul li {
+        background-position: left center; /* Asegura que el icono esté a la izquierda */
+        padding-left: 28px; /* Mantiene el padding para el icono */
+        text-align: left; /* Alinea el texto de la lista a la izquierda */
+        margin: 0 0 10px 0; /* Ajusta márgenes */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .product-category img {
+        width: 150px; /* Imágenes más pequeñas en móviles */
+        height: 150px;
+    }
+
+    .product-category h2 {
+        font-size: 1.6em;
+    }
+
+    .main-menu ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .main-menu li {
+        margin: 0;
+        border-bottom: 1px solid #444;
+    }
+
+    .main-menu li:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Animación para las imágenes */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
